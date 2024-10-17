@@ -9,7 +9,7 @@ export class PokemonService {
   http = inject(HttpClient);
 
   getPokemon(){
-    return this.http.get(this.apiUrl + '/pokemon/?&limit=39');
+    return this.http.get(this.apiUrl + '/pokemon/?&limit=300');
   }
   
   getPokemonByName(name: String) {

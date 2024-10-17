@@ -2,8 +2,12 @@
     @for (pokemon of pokemonDetails; track pokemon.id) {
         <article>
             <header>{{ pokemon.name | titlecase }}</header>
-            <img src="{{ pokemon.sprites.front_default}}" />
-            <img src="{{ pokemon.sprites.back_default}}" />
+            @defer {
+                <img src="{{ pokemon.sprites.front_default}}" />
+                <img src="{{ pokemon.sprites.back_default}}" />
+            } @placeholder (minimum 1000ms) {
+                <article aria-busy="true"></article>
+            }
             <footer>Footer</footer>
         </article>
     }
