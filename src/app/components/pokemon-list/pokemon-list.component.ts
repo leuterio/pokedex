@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { forkJoin } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 import { PokemonCardComponent } from "../pokemon-card/pokemon-card.component";
+import { PokemonDetails } from '../../interfaces/pokemon-details';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -41,7 +42,7 @@ export class PokemonListComponent implements OnInit {
         // Após obter a lista de pokemons, chama a função que vai buscar os details
         return this.getPokemonDetails(this.pokemon);
       })
-    ).subscribe((details: any[]) => {
+    ).subscribe((details: PokemonDetails[]) => {
       // Aqui você recebe todos os details
       this.pokemonDetails = details;
     });
