@@ -1,13 +1,14 @@
 @if (pokemonDetails) {
-    <article>
+<article class="card" (click)="cardClicked()" [@cardFlip]="data.state">
+    <div class="face back">
         <header>{{ pokemonDetails.name }}</header>
-        @defer {
-            <img src="{{ pokemonDetails.sprites.front_default}}" />
-            <img src="{{ pokemonDetails.sprites.back_default}}" />
-        } @placeholder (minimum 500ms) {
-            <article aria-busy="true"></article>
-        }
+        <img src="{{ pokemonDetails.sprites.other.showdown.front_default}}" />
         <footer>Footer</footer>
-    </article>
+    </div>
+    <div class="face front">
+        <header>{{ pokemonDetails.name }}</header>
+        <img src="{{ pokemonDetails.sprites.other.showdown.back_default}}" />
+        <footer>Footer</footer>
+    </div>
+</article>
 }
-

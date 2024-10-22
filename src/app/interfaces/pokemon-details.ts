@@ -16,8 +16,12 @@ export interface PokemonDetails {
     past_types: Array<any>;
     species: Object;
     sprites: {
-        front_default: String;
-        back_default: String;
+        other: {
+            showdown: {
+                front_default: String;
+                back_default: String;
+            }
+        }
     };
     stats: Array<any>;
     types: Array<any>;
