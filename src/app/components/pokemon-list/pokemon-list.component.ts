@@ -21,14 +21,21 @@ export class PokemonListComponent implements OnInit {
   pokemon: Pokemon[] = [];
   pokemonName: String = '';
   pokemonDetails: any[] = [];
+  offset: number = 0;
+  limit: number = 20;
+  nextPageUrl: string | null = null;
+  previousPageUrl: string | null = null;
+
   
   ngOnInit(): void {
     this.getPokemonService();
   }
   
   getPokemonService() {
-    this.pokemonService.getPokemon().pipe(
+    this.pokemonService.getPokemon(this.offset, this.limit).pipe(
       switchMap((res: any) => {
+        this.nextPageUrl = res.next;
+        this.previousPageUrl = res.previous;
         this.pokemon = res.results;
         // Após obter a lista de pokemons, chama a função que vai buscar os details
         return this.getPokemonDetails(this.pokemon);
@@ -55,5 +62,19 @@ export class PokemonListComponent implements OnInit {
     
     // Retorna um forkJoin que espera todas as requisições de details serem completadas
     return forkJoin(spriteRequests);
+  }
+
+  nextPage(): void {
+    if (this.nextPageUrl) {
+      this.offset += this.limit; // Incrementa o offset
+      this.getPokemonService();
+    }
+  }
+
+  previousPage(): void {
+    if (this.nextPageUrl) {
+      this.offset -= this.limit; // Incrementa o offset
+      this.getPokemonService();
+    }
   }
 }
