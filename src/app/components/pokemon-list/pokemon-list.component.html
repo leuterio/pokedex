@@ -1,16 +1,7 @@
 <div class="container">
     <section class="pokemon__list">     
         @for (pokemon of pokemonDetails; track pokemon.id) {
-            <article>
-                <header>{{ pokemon.name | titlecase }}</header>
-                @defer {
-                    <img src="{{ pokemon.sprites.front_default}}" />
-                    <img src="{{ pokemon.sprites.back_default}}" />
-                } @placeholder (minimum 500ms) {
-                    <article aria-busy="true"></article>
-                }
-                <footer>Footer</footer>
-            </article>
+            <app-pokemon-card [pokemonDetails]="pokemon"/>
         }
     </section>
     <section class="button__container">

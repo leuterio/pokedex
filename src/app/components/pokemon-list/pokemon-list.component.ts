@@ -6,11 +6,12 @@ import { Pokemon } from '../../interfaces/pokemon';
 import { FormsModule } from '@angular/forms';
 import { forkJoin } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
+import { PokemonCardComponent } from "../pokemon-card/pokemon-card.component";
 
 @Component({
   selector: 'app-pokemon-list',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule],
+  imports: [RouterOutlet, CommonModule, FormsModule, PokemonCardComponent],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
   providers:  [ PokemonService ]

@@ -1,0 +1,13 @@
+@if (pokemonDetails) {
+    <article>
+        <header>{{ pokemonDetails.name }}</header>
+        @defer {
+            <img src="{{ pokemonDetails.sprites.front_default}}" />
+            <img src="{{ pokemonDetails.sprites.back_default}}" />
+        } @placeholder (minimum 500ms) {
+            <article aria-busy="true"></article>
+        }
+        <footer>Footer</footer>
+    </article>
+}
+
