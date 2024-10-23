@@ -1,14 +1,30 @@
 @if (pokemonDetails) {
-<article class="card" (click)="cardClicked()" [@cardFlip]="data.state">
-    <div class="face back">
-        <header>{{ pokemonDetails.name }}</header>
-        <img src="{{ pokemonDetails.sprites.other.showdown.front_default}}" />
-        <footer>Footer</footer>
-    </div>
+
+<div class="card" (click)="cardClicked()" [@cardFlip]="data.state">
     <div class="face front">
         <header>{{ pokemonDetails.name }}</header>
-        <img src="{{ pokemonDetails.sprites.other.showdown.back_default}}" />
-        <footer>Footer</footer>
+        <div class="pokemon-type">
+            @for (types of pokemonDetails.types; track pokemonDetails.id) {
+                <span class="type">{{ types.type.name }}</span>
+            }
+        </div>
+        <img src="{{ pokemonDetails.sprites.other.showdown.front_default}}" />
+        <footer>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, error.</p>
+        </footer>
     </div>
-</article>
+    <div class="face back">
+        <header>{{ pokemonDetails.name }}</header>
+        <div class="pokemon-type">
+            @for (types of pokemonDetails.types; track pokemonDetails.id) {
+                <span class="type">{{ types.type.name }}</span>
+            }
+        </div>
+        <img src="{{ pokemonDetails.sprites.other.showdown.back_default}}" />
+        <footer>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, error.</p>
+        </footer>
+    </div>
+</div>
+
 }
