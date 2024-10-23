@@ -1,12 +1,12 @@
 @if (pokemonDetails) {
 
-<div class="card" (click)="cardClicked()" [@cardFlip]="data.state">
+<div class="card" (click)="cardClicked()" [@cardFlip]="data.state" [ngStyle]="{'box-shadow': getBoxShadow(pokemonDetails.types[0].type.name)}">
     <div class="face front">
         <header [ngStyle]="{'background-color': getTypeColor(pokemonDetails.types[0].type.name)}">
             <p>{{ pokemonDetails.name }}</p>
         </header>
         <div class="pokemon-description">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, error.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, explicabo!</p>
         </div>
         <img src="{{ pokemonDetails.sprites.other.showdown.front_default}}" />
         <footer>
@@ -20,7 +20,7 @@
             <p>{{ pokemonDetails.name }}</p>
         </header>
         <div class="pokemon-description">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, error.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, explicabo!</p>
         </div>
         <img src="{{ pokemonDetails.sprites.other.showdown.back_default}}" />
         <footer>

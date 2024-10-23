@@ -60,6 +60,10 @@ export class PokemonCardComponent implements OnInit {
   getTypeColor(type: string): string {
     return this.typeColors[type] || '#FFF'; // Cor padrão caso o tipo não seja encontrado
   }
+  getBoxShadow(type: string): string {
+    const color = this.getTypeColor(type);
+    return `10px 10px 43px -18px ${color}`;
+  }
 
   cardClicked() {
     if (this.data.state === "default") {
