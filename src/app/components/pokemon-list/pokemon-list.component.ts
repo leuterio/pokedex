@@ -9,14 +9,15 @@ import { switchMap, map } from 'rxjs/operators';
 import { PokemonCardComponent } from "../pokemon-card/pokemon-card.component";
 import { PokemonDetails } from '../../interfaces/pokemon-details';
 import { SearchService } from '../../services/search.service';
+import { PokemonFilterPipe } from '../../pipes/pokemon-filter.pipe';
 
 @Component({
   selector: 'app-pokemon-list',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, PokemonCardComponent],
+  imports: [RouterOutlet, CommonModule, FormsModule, PokemonCardComponent, PokemonFilterPipe],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
-  providers:  [ PokemonService, SearchService ]
+  providers:  [ PokemonService, SearchService ],
 })
 
 export class PokemonListComponent implements OnInit {

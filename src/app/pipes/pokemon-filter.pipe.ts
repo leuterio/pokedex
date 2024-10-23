@@ -1,11 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Pokemon } from '../interfaces/pokemon'; // Importe o tipo
+import { PokemonDetails } from '../interfaces/pokemon-details';
 
 @Pipe({
-  name: 'pokemonFilter'
+  name: 'pokemonFilter',
+  standalone: true
 })
 export class PokemonFilterPipe implements PipeTransform {
-  transform(pokemons: Pokemon[], searchTerm: string): Pokemon[] {
+  transform(pokemons: PokemonDetails[], searchTerm: string): PokemonDetails[] {
     if (!pokemons || !searchTerm) {
       return pokemons; // Retorna todos se não houver termo de busca
     }

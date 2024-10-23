@@ -1,6 +1,6 @@
 <main class="container">
     <section class="pokemon__list">     
-        @for (pokemon of pokemonDetails; track pokemon.id) {
+        @for (pokemon of pokemonDetails | pokemonFilter: searchTerm; track pokemon.id) {
             <app-pokemon-card [pokemonDetails]="pokemon"/>
         }
     </section>
