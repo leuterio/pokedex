@@ -56,9 +56,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   getPokemonByName(name: String) {
-    return this.pokemonService.getPokemonByName(name).subscribe((res: any) => {
-      console.log(res);
-    });
+    return this.pokemonService.getPokemonByName(name);
   }
 
   getPokemonDetails(pokemons: Pokemon[]) {
