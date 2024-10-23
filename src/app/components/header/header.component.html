@@ -1,6 +1,15 @@
 <nav class="container">
     <ul>
-        <li><strong>Pokemon</strong></li>
+        <li>
+            <img src="https://www.pngmart.com/files/23/Pokedex-PNG-HD-Isolated.png" alt="">
+            <strong>Pokédex</strong>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <input type="search" name="search" placeholder="Search" aria-label="Search" placeholder="Pesquisar Pokémon"
+                (input)="onSearch($event)" />
+        </li>
     </ul>
     <ul>
         <li><a href="https://pokeapi.co/">PokéAPI</a></li>

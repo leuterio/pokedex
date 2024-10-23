@@ -20,6 +20,8 @@ export interface PokemonDetails {
             showdown: {
                 front_default: String;
                 back_default: String;
+                front_shiny: String;
+                back_shiny: String;
             }
         }
     };

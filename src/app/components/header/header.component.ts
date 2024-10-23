@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  searchService = inject(SearchService);
 
+  // Chame este método ao digitar no input
+  onSearch(event: Event): void {
+    const input = event.target as HTMLInputElement; // "Type assertion" para garantir que é um input
+    this.searchService.updateSearchTerm(input.value); // Agora o TypeScript reconhece o .value
+  }
 }

@@ -71,22 +71,29 @@
     margin-bottom: 25px;
 
     header {
-        background: #333;
         padding: 10px;
         border-radius: 5px 5px 0px 0px;
-        text-transform: capitalize;
+        p {
+            text-transform: capitalize;
+            color: #333;
+            margin: 0;
+            font-weight: bold;
+        }
     }
-    .pokemon-type {
+    .pokemon-description {
+        text-transform: capitalize;
         position: absolute;
+        top: 60px;
         left: 15px;
-        top: 55px;
-        z-index: 1;
-        .type {
-            background: #333;
-            padding: 5px;
-            border-radius: 5px;
-            margin-right: 5px;
-            font-size: 12px;
+        width: calc(100% - 30px);
+        background: white;
+        padding: 10px;
+        height: 60px;
+        opacity: 0.6;
+        border-radius: 5px;
+        p {
+            color: #333;
+            font-size: 10px;
         }
     }
     .face {
@@ -113,19 +120,19 @@
         }
     }
     footer {
-        text-transform: capitalize;
         position: absolute;
         bottom: 15px;
         left: 15px;
-        width: calc(100% - 30px);
-        background: white;
-        padding: 10px;
-        height: 60px;
-        opacity: 0.6;
-        border-radius: 5px;
-        p {
-            color: #333;
-            font-size: 10px;
+        .type {
+            color: #FFF;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 5px;
+            font-size: 12px;
+            font-weight: bolder;
+            -webkit-box-shadow: 6px 9px 13px -8px rgba(0,0,0,0.75);
+            -moz-box-shadow: 6px 9px 13px -8px rgba(0,0,0,0.75);
+            box-shadow: 6px 9px 13px -8px rgba(0,0,0,0.75);
         }
     }
 }

@@ -8,6 +8,7 @@ import { forkJoin } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 import { PokemonCardComponent } from "../pokemon-card/pokemon-card.component";
 import { PokemonDetails } from '../../interfaces/pokemon-details';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -15,11 +16,12 @@ import { PokemonDetails } from '../../interfaces/pokemon-details';
   imports: [RouterOutlet, CommonModule, FormsModule, PokemonCardComponent],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
-  providers:  [ PokemonService ]
+  providers:  [ PokemonService, SearchService ]
 })
 
 export class PokemonListComponent implements OnInit {
   pokemonService = inject(PokemonService);
+  searchService = inject(SearchService);
   pokemon: Pokemon[] = [];
   pokemonName: String = '';
   pokemonDetails: any[] = [];
@@ -27,10 +29,15 @@ export class PokemonListComponent implements OnInit {
   limit: number = 20;
   nextPageUrl: string | null = null;
   previousPageUrl: string | null = null;
+  searchTerm: string = '';
 
   
   ngOnInit(): void {
     this.getPokemonService();
+    // Inscreva-se no serviço para obter o termo de busca
+    this.searchService.currentSearchTerm.subscribe(term => {
+      this.searchTerm = term;
+    });
   }
   
   getPokemonService() {

@@ -5,6 +5,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule, provideAnimations } from
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { PokemonService } from './services/pokemon.service';
+import { PokemonFilterPipe } from './pipes/pokemon-filter.pipe'; // Importe o pipe
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,6 +14,7 @@ export const appConfig: ApplicationConfig = {
     { provide: PokemonService }, 
     { provide: BrowserAnimationsModule },
     { provide: NoopAnimationsModule },
+    { provide: PokemonFilterPipe },
     provideAnimations(),
   ],
 };
