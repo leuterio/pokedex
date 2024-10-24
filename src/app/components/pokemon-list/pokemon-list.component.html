@@ -5,7 +5,8 @@
         }
     </section>
 </main>
-<footer class="container button__container">
+@defer  {
+    <footer class="container button__container">
         @if (previousPageUrl) {
             <button (click)="previousPage()">Anterior</button>
         } @else {
@@ -17,4 +18,7 @@
             <button class="secondary" disabled>Próximo</button>
         }
 </footer>
+} @placeholder (minimum 1000ms){
+    <p></p>
+}
 

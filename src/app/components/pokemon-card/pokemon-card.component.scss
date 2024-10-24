@@ -3,62 +3,6 @@
     perspective: 600px;
 }
 
-/*
-.card {
-    border-radius: 5px;
-    height: 350px;
-    width: auto;
-    cursor: pointer;
-    position: relative;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    margin-bottom: 25px;
-
-    .face {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 200px;
-        border-radius: inherit;
-        backface-visibility: hidden;
-
-        header {
-            background: #333;
-            padding: 10px;
-            border-radius: 5px 5px 0px 0px;
-            text-transform: capitalize;
-        }
-
-        >img {
-            width: 100%;
-            height: 100%;
-            object-fit: scale-down;
-            border-radius: 0px 0px 5px 5px;
-            background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2c08d530-29ab-442b-9b52-6ed6969f2bd7/d8i3udq-c83b045c-859b-4ef9-9023-cef58008b879.png/v1/fill/w_1024,h_576,q_80,strp/pokemon_landscape_by_brainblower_d8i3udq-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvMmMwOGQ1MzAtMjlhYi00NDJiLTliNTItNmVkNjk2OWYyYmQ3XC9kOGkzdWRxLWM4M2IwNDVjLTg1OWItNGVmOS05MDIzLWNlZjU4MDA4Yjg3OS5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.Stt6KzljYUqBWRuwXLsbeiJZsxuGoAcZYXSgaFl2iQU");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        &.back {
-            transform: rotateY(180deg);
-        }
-
-        footer {
-            text-transform: capitalize;
-            .type {
-                background: #333;
-                padding: 5px;
-                border-radius: 5px;
-                margin-right: 5px;
-                font-size: 12px;
-            }
-        }
-    }
-
-}
-*/  
-
 .card {
     box-shadow: 10px 10px 43px -18px rgba(0, 0, 0, 0.75);
     border-radius: 5px;
