@@ -1,6 +1,12 @@
 nav {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr 1fr;
+    .dropdown {
+        ul {
+            max-height: 310px;
+            overflow: auto;
+        }
+    }
     ul {
         li {
             width: 100%;

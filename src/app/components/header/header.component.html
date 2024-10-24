@@ -7,8 +7,7 @@
     </ul>
     <ul>
         <li>
-            <input type="search" name="search" placeholder="Search" aria-label="Search" placeholder="Pesquisar Pokémon"
-                (input)="onSearch($event)" />
+            <input type="search" name="search" placeholder="Search" aria-label="Search" placeholder="Search pokémon" />
         </li>
     </ul>
     <ul>
@@ -18,10 +17,9 @@
                   Type
                 </summary>
                 <ul dir="rtl">
-                  <li><a href="#">Graas</a></li>
-                  <li><a href="#">Bug</a></li>
-                  <li><a href="#">Fire</a></li>
-                  <li><a href="#">Normal</a></li>
+                    @for (type of pokemonTypes; track type) {
+                        <li><a href="#">{{type.name}}</a></li>
+                    } 
                 </ul>
               </details>
         </li>

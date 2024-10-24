@@ -8,9 +8,9 @@ export interface PokemonDetails {
     held_items: Array<any>;
     id: number;
     is_default: boolean;
-    location_area_encounters: String;
+    location_area_encounters: string;
     moves: Array<any>;
-    name: String;
+    name: string;
     order: number;
     past_abilities: Array<any>;
     past_types: Array<any>;
@@ -18,10 +18,10 @@ export interface PokemonDetails {
     sprites: {
         other: {
             showdown: {
-                front_default: String;
-                back_default: String;
-                front_shiny: String;
-                back_shiny: String;
+                front_default: string;
+                back_default: string;
+                front_shiny: string;
+                back_shiny: string;
             }
         }
     };

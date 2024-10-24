@@ -1,5 +1,7 @@
-import { Component, inject } from '@angular/core';
-import { SearchService } from '../../services/search.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { PokemonService } from '../../services/pokemon.service';
+import { PokemonTypes } from '../../interfaces/pokemon-types';
+import { PokemonType } from '../../interfaces/pokemon-type';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +10,17 @@ import { SearchService } from '../../services/search.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
-  searchService = inject(SearchService);
+export class HeaderComponent implements OnInit {
+    pokemonService = inject(PokemonService);
+    pokemonTypes: PokemonType[] = [];
 
-  // Chame este método ao digitar no input
-  onSearch(event: Event): void {
-    const input = event.target as HTMLInputElement; // "Type assertion" para garantir que é um input
-    this.searchService.updateSearchTerm(input.value); // Agora o TypeScript reconhece o .value
-  }
+    ngOnInit(): void {
+      this.getPokemonTypes();
+    }
+    
+    getPokemonTypes() {
+      this.pokemonService.getAllPokemonTypes().subscribe((res: PokemonTypes) => {
+        this.pokemonTypes = res.results;
+      });
+    }
 }
