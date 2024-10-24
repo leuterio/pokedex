@@ -1,24 +1,23 @@
-<main class="container">
-    <section class="pokemon-list">     
+<div class="container">
+    <section class="pokemon-list">
         @for (pokemon of pokemonDetails; track pokemon.id) {
-            <app-pokemon-card [pokemonDetails]="pokemon"/>
+        <app-pokemon-card [pokemonDetails]="pokemon" />
         }
     </section>
-</main>
-@defer  {
-    <footer class="container button-container">
-        @if (previousPageUrl) {
-            <button (click)="previousPage()">Anterior</button>
-        } @else {
-            <button class="secondary" disabled>Anterior</button>
-        }
-        @if (nextPageUrl) {
-            <button (click)="nextPage()">Próximo</button>
-        } @else {
-            <button class="secondary" disabled>Próximo</button>
-        }
-</footer>
+</div>
+@defer {
+<div class="container button-container">
+    @if (previousPageUrl) {
+    <button (click)="previousPage()">Anterior</button>
+    } @else {
+    <button class="secondary" disabled>Anterior</button>
+    }
+    @if (nextPageUrl) {
+    <button (click)="nextPage()">Próximo</button>
+    } @else {
+    <button class="secondary" disabled>Próximo</button>
+    }
+</div>
 } @placeholder (minimum 1000ms){
-    <p></p>
+<p></p>
 }
-
